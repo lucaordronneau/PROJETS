@@ -1,0 +1,30 @@
+#para {
+  color: black;
+  margin-bottom: 2px;
+  margin-top: -14px;
+
+}
+hr {
+	border: 1px solid #5c6bc0;
+	width: 90px;
+
+}
+
+
+.position {
+  margin-top: -80px;
+  margin-bottom: 50px;
+}
+
+.containerS1 {
+box-shadow: 0 5px 12px rgba(0,0,0,0.11),
+  0 4px 4px rgba(0,0,0,0.10);
+  background-color:  grey lighten-3;
+  border-radius: 13px;
+  margin : 10px;
+}
+
+.imageV {
+  border-radius:  13px;
+  margin: 10px;
+}

@@ -1,0 +1,46 @@
+.buttonR {
+  display: inline-block;
+  border-radius: 14px;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 140px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.buttonR span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonR span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonR:hover span {
+  padding-right: 25px;
+}
+
+.buttonR:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonR:hover {
+  background-color: #ced8dc;
+}
+
+.buttonR {
+  background: #eeeeee;
+  color: black; 
+  border: 2px solid #ced8dc;
+}

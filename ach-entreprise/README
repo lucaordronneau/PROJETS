@@ -1,0 +1,14 @@
+Chargement BDD dans un terminal :
+
+sudo service mysql start
+sudo mysql -u admin -p
+Mot de Passe : admin
+CREATE DATABASE projettransverse;
+USE projettransverse;
+Charger le fichier sql : source Bdd.sql;
+
+Ouvrir le site avec : index.php
+
+Pour la connexion au site en tant que Grand Administrateur ACH :
+  - login : test@eisti.eu
+  - Password : test

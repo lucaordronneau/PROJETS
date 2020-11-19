@@ -1,0 +1,161 @@
+.buttonR {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.buttonR:hover {
+  background-color: #5c6bc0;
+	color: white;
+}
+
+.buttonR2 {
+  background: white;
+  color: #5c6bc0;
+  border: 2px solid #5c6bc0;
+}
+
+.buttonR2 {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.buttonR2:hover {
+  background-color: #5c6bc0;
+	color: white;
+}
+
+.buttonR2 {
+  background: white;
+  color: #5c6bc0;
+  border: 2px solid #5c6bc0;
+}
+
+.buttonR3 {
+  background: #eeeeee;
+  color: #ef5350;
+  border: 2px solid #ef5350;
+}
+
+.buttonR3 {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.buttonR3:hover {
+  background-color: #ef5350;
+	color: white;
+}
+
+.buttonR3 {
+  background: white;
+  color: #ef5350;
+  border: 2px solid #ef5350;
+}
+
+.buttonR4 {
+  background: white;
+  color: #66bb6a;
+  border: 2px solid #66bb6a;
+}
+
+.buttonR4 {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.buttonR4:hover {
+  background-color: #66bb6a;
+	color: white;
+}
+
+.buttonR4 {
+  background: white;
+  color: #66bb6a;
+  border: 2px solid #66bb6a;
+}
+
+.titreRes2 {
+
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.titreRes21 {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+#inscription div{
+    padding-top: 8px;
+    font-size: 16px;
+}
+
+.couleurIcon {
+  color: #40c4ff;
+}
+
+h4 {
+  margin-bottom: 8px;
+}
+
+.petitPara {
+  font-weight: 300;
+}
+
+.containerS1 {
+box-shadow: 0 5px 12px rgba(0,0,0,0.11),
+  0 4px 4px rgba(0,0,0,0.10);
+  background-color:  grey lighten-3;
+  border-radius: 13px;
+  padding: 20px;
+  margin : 10px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+hr {
+	border: 1px solid #5c6bc0;
+	width: 90px;
+
+}
+
+.margerhr {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}

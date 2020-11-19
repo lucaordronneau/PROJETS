@@ -1,0 +1,82 @@
+#infosFormation {
+
+
+}
+
+hr {
+	border: 1px solid #5c6bc0;
+	width: 90px;
+
+}
+
+.margerhr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#infosFormation div{
+    padding-bottom: 1%;
+}
+
+#infosOrga {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #cfd8dc;
+    padding: 2%;
+    padding-left: 5%;
+    width: 75%;
+    margin: auto;
+    margin-top : 2%;
+    margin-bottom: 2%;
+    border: 2px outset grey;
+
+}
+#infosOrga div{
+    padding-bottom: 1%;
+}
+
+#formation2 div{
+    padding-bottom: 8px;
+    font-size: 16px;
+}
+
+#formation2 .organisme div{
+    padding-bottom: 5px;
+    font-size: 10px;
+}
+
+.titreRes2 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.titreRes21 {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+.buttonR2 {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+
+}
+
+.buttonR2:hover {
+  background-color: #5c6bc0;
+	color: white;
+}
+
+.buttonR2 {
+  background: white;
+  color: #5c6bc0;
+  border: 2px solid #5c6bc0;
+}

@@ -1,0 +1,17 @@
+#infosFormation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #cfd8dc;
+    padding: 2%;
+    padding-left: 5%;
+    width: 75%;
+    margin: auto;
+    margin-top : 2%;
+    margin-bottom: 2%;
+    border: 2px outset grey;
+
+}
+#infosFormation div{
+    padding-bottom: 1%;
+}

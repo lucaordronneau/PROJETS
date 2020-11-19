@@ -1,0 +1,103 @@
+/* Bloc formation */
+#formation {
+
+
+}
+
+#choix_recherches_div {
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    width: 50%;
+    margin: auto;
+    margin-top : 2%;
+    margin-bottom: 2%;
+    border: 2px outset grey;
+    color:  black;
+
+}
+
+/*Couleur des icons résultat*/
+.couleurIcon {
+  color: #40c4ff;
+}
+
+#formation div{
+    padding-bottom: 5px;
+    font-size: 18px;
+}
+
+#formation .organisme div{
+    padding-bottom: 5px;
+    font-size: 24px;
+}
+
+
+/* bloc geolocation */
+
+#body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map_canvas {
+  height: 700px;
+  width: 700px;
+}
+
+.titreRes {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.petitPara {
+  font-weight: 300;
+}
+
+.titreRes1 {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.organisme {
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.buttonR {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+
+.buttonR:hover {
+  background-color: #5c6bc0;
+	color: white;
+}
+
+.buttonR {
+  background: white;
+  color: #5c6bc0;
+  border: 2px solid #5c6bc0;
+}
+
+.resultatF{
+  text-align: center;
+  color : #ef5350 ;
+
+}
+
+.resultatT{
+  text-align: center;
+  color : #66bb6a;
+}

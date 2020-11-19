@@ -1,0 +1,80 @@
+/*Bouton de recherche*/
+
+.buttonR {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.buttonR:hover {
+  background-color: #5c6bc0;
+	color: white;
+}
+
+.buttonR {
+  background: white;
+  color: #5c6bc0;
+  border: 2px solid #5c6bc0;
+}
+
+.espace {
+  padding-bottom: 10px;
+}
+
+.containerS {
+box-shadow: 0 5px 12px rgba(0,0,0,0.11),
+  0 4px 4px rgba(0,0,0,0.10);
+  background-color:  grey lighten-3;
+  border-radius: 13px;
+  padding: 20px;
+  margin : 10px;
+}
+.taille {
+	margin: 30px;
+}
+
+.buttonR {
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.buttonR:hover {
+  background-color: #5c6bc0;
+	color: white;
+}
+
+.buttonR {
+  background: white;
+  color: #5c6bc0;
+  border: 2px solid #5c6bc0;
+
+}
+
+.resultatF{
+  text-align: center;
+  color : #ef5350 ;
+  background-color:  grey lighten-3;
+
+}
+
+.resultatT{
+  text-align: center;
+  color : #66bb6a;
+  background-color:  grey lighten-3;
+}
