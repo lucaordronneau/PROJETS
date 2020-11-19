@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('../font/press-start-2P.ttf');
+}
+
+#background-1 {
+    -fx-background-image: url("../image/background/background.png");
+}
+
+.button
+{
+    -fx-background-color: transparent;
+    -fx-font-family: 'Press Start 2P';
+    -fx-font-size: 50;
+    -fx-text-fill: #00b9f0;
+    -fx-effect: dropshadow(gaussian, #005c7b, 1, 1, 1, 4);
+}
+
+.button:hover
+{
+    -fx-text-fill: #e8ffdd;
+    -fx-effect: dropshadow(gaussian, #be005a, 1, 1, 1, 4);
+    -fx-cursor: hand;
+}
+
+#level-display-text
+{
+    -fx-font-family: 'Press Start 2P';
+    -fx-font-size: 50;
+    -fx-fill: #e8ffdd;
+    -fx-background-color: #e8ffdd;
+}
+
+#player-life-display-text
+{
+    -fx-font-size: 40;
+    -fx-fill: #0083b1;
+}
+
+#enemy-fighting-life-display-text
+{
+    -fx-font-size: 40;
+    -fx-fill: #be005a;
+}
+
+#game-over-display-text
+{
+    -fx-font-family: 'Press Start 2P';
+    -fx-font-size: 50;
+    -fx-fill: #e8ffdd;
+}

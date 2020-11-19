@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="background-1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.999-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.cyu.cyfight.javafx.controller.MenuSceneController">
+    <children>
+        <VBox alignment="CENTER" layoutX="494.0" layoutY="162.0">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="600.0" nodeOrientation="INHERIT" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../image/logo.png"/>
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="100.0"/>
+                    </VBox.margin>
+                </ImageView>
+
+                <Button fx:id="startButton" layoutX="76.0" layoutY="350.0" mnemonicParsing="false"
+                        onAction="#menuAction" text="Start" textAlignment="CENTER">
+                    <font>
+                        <Font size="50.0"/>
+                    </font>
+                </Button>
+
+                <Button fx:id="quitButton" onAction="#menuAction" mnemonicParsing="false" text="Quit" textAlignment="CENTER">
+                    <font>
+                        <Font size="50.0"/>
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+
+    <opaqueInsets>
+        <Insets/>
+    </opaqueInsets>
+</AnchorPane>

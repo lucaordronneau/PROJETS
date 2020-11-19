@@ -1,0 +1,15 @@
+module:cyfight
+fr.cyu.cyfight
+fr.cyu.cyfight.config
+fr.cyu.cyfight.event.args
+fr.cyu.cyfight.event.base
+fr.cyu.cyfight.event.listener
+fr.cyu.cyfight.event.manager
+fr.cyu.cyfight.game.base
+fr.cyu.cyfight.game.cell
+fr.cyu.cyfight.game.entity
+fr.cyu.cyfight.game.fight
+fr.cyu.cyfight.javafx.builder
+fr.cyu.cyfight.javafx.controller
+fr.cyu.cyfight.javafx.util
+fr.cyu.cyfight.util

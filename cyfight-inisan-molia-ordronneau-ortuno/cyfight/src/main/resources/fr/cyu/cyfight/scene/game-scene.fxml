@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="background-1" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="900.0" prefWidth="1600.0"
+            xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fr.cyu.cyfight.javafx.controller.GameSceneController">
+            <children>
+            </children>
+</AnchorPane>

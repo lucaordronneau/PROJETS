@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane id="background-1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+           prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.999-ea"
+           onKeyPressed="#onKeyPressed"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.cyu.cyfight.javafx.controller.GameOverSceneController">
+    <children>
+        <VBox alignment="CENTER">
+            <children>
+                <Text id="game-over-display-text" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME OVER"/>
+
+                <Text id="game-over-display-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Press [ESC] to exit"/>
+            </children>
+        </VBox>
+    </children>
+</StackPane>
