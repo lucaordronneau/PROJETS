@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" th:href="@{/css/images/pacmanfavicon.png}" />
+    <title>PACMAN Joueurs</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand">PACMAN</a>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="listeJoueurs">Joueurs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="statistiquesAdministrateur">Statistiques</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profilAdministrateur">Profil</a>
+            </li>
+            <li class="nav-item">
+                <form id="my_form" form-method="post" th:action="@{/logout} ">
+                    <a class="nav-link" href="javascript:{}" onclick="document.getElementById('my_form').submit();">Deconnexion</a>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h2 class = "mt-4">Voici tous les joueurs   FAIRE AJOUT JOUEUR!</h2> <br>
+    <table border="1" class="table table-responsive-md">
+        <thead>
+            <tr>
+                <th>Pseudo</th>
+                <th>Email</th>
+                <th>Pays</th>
+                <th>Score</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="personne : ${listeJoueur}">
+                <td th:text="${personne.pseudo}"></td>
+                <td th:text="${personne.email}"></td>
+                <td th:text="${personne.pays}"></td>
+                <td th:text="${personne.score}"></td>
+                <td>
+                    <a th:href="@{/updateListeJoueurs/{id}(id=${personne.id})}" class="btn btn-primary">Mettre à jour</a>
+                    <a th:href="@{/deletePersonne/{id}(id=${personne.id})}" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>

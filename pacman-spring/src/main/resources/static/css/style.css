@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica ;
+    background-color: #1919A6;
+    color: #f7f7f7;
+}
+
+#my_form {
+    margin-block-end: -1em;
+}
+
+/*Block*/
+.block{
+    padding: 8px;
+    margin: 2px;
+    color: #1919A6;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.10);
+    border-radius: 14px;
+}
+
+.block label{
+    color: #FD0000;
+    opacity: 60%;
+    font-size: 12px;
+    vertical-align: baseline;
+}
+
+.block span {
+    text-transform: uppercase;
+}
+
+/*Séparation HR*/
+
+.hrS {
+    border: 1px solid #FFFF00;
+    width: 90px;
+}
+
+.hrC {
+    border: 1px solid #DEA185;
+    width: 90px;
+}
+
+/*Lien connexion et inscription*/
+
+.lienIC{
+    text-decoration: none;
+    color:#DEA185;
+}
+
+.lienIC:hover{
+    text-decoration: none;
+    color:#DEA185;
+    opacity: 60%;
+}
+
+h2 span {
+    text-transform: uppercase;
+}
+
+/*Boutons*/
+/*Bouton fond sombre*/
+.buttonS {
+    display: inline-block;
+    border-radius: 50px;
+    border: none;
+    text-align: center;
+    padding: 8px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #1919A6;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+    text-decoration: none;
+}
+
+.buttonS:hover {
+    background-color: #FFFF00;
+    color: #1919A6;
+    text-decoration: none;
+}
+
+/*Bouton fond clair*/
+.buttonC {
+    display: inline-block;
+    border-radius: 50px;
+    border: none;
+    text-align: center;
+    padding: 8px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #f7f7f7;
+    color: #DEA185;
+    border: 2px solid #DEA185;
+    text-decoration: none;
+}
+
+.buttonC:hover {
+    background-color: #DEA185;
+    color: #f7f7f7;
+    text-decoration: none;
+}
+
+/*Table*/
+.table td, table th {
+    border-color: #2121DE !important;
+}
+.table thead th {
+    border-color: #2121DE!important;
+}
+.table td, table th {
+    border-width: 3px !important;
+    border-color: #2121DE !important;
+    color: #FFFF00;
+    background-color: black;
+}
+.table td {
+    color: #DEA185;
+}
+.table th {
+    color: #FFFF00;
+}
+
+/* Classement */
+
+.classement {
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+}
+
+.classement td, .classement th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.classement tr{
+    background-color: #bebebe;
+}
+
+.classement tr:nth-child(even){
+    background-color: black;
+}
+
+.classement tr:hover {
+    background-color: #ddd;
+}
+
+.classement th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 566px;
+    height: 566px;
+    border: solid black;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.pac-dot {
+    background-color: green;
+    border: 5px solid white;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: blue;
+}
+
+.power-pellet {
+    background-color: green;
+    border-radius: 10px;
+}
+
+.pac-man {
+    background-color: yellow;
+    border-radius: 10px;
+}

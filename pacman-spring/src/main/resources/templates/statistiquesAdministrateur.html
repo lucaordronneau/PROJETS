@@ -1,0 +1,166 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<script th:src="@{/chartjs/jquery-2.1.4.min.js}"></script>
+<!--<script th:src="@{/chartjs/Chart.js}"></script>-->
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js}"></script>
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" th:href="@{/css/images/pacmanfavicon.png}" />
+    <title>PACMAN</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand">PACMAN</a>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="listeJoueurs">Joueurs</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="statistiquesAdministrateur">Statistiques</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profilAdministrateur">Profil</a>
+            </li>
+            <li class="nav-item">
+                <form id="my_form" form-method="post" th:action="@{/logout} ">
+                    <a class="nav-link" href="javascript:{}" onclick="document.getElementById('my_form').submit();">Deconnexion</a>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h2 class = "mt-4">Stats !</h2> <br>
+
+    <input id="homme"  type="hidden" th:value="${listNbHomme}"/>
+
+    <input id="femme"  type="hidden" th:value="${listNbFemme}" />
+
+    <input id="other" type="hidden" th:value="${listNbOther}"/>
+
+    <input id="fr"  type="hidden" th:value="${listNbFr}"/>
+
+    <input id="co"  type="hidden" th:value="${listNbCo}" />
+
+    <input id="cr"  type="hidden" th:value="${listNbCr}" />
+
+    <input id="ru" type="hidden" th:value="${listNbRu}"/>
+
+    <input id="an"  type="hidden" th:value="${listNbAng}"/>
+
+    <input id="can"  type="hidden" th:value="${listNbCan}" />
+
+    <input id="no"  type="hidden" th:value="${listNbNo}" />
+
+    <input id="et"  type="hidden" th:value="${listNbEt}" />
+
+    <input id="au"  type="hidden" th:value="${listNbAu}" />
+
+    <input id="ja" type="hidden" th:value="${listNbJa}"/>
+
+    <div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <canvas id="pie-chart" width="800" height="450"></canvas>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <canvas id="bar-chart" width="800" height="450"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        var nb_homme = $('#homme').val();
+        var nb_femme = $('#femme').val();
+        var nb_other = $('#other').val();
+        var nb_fr = $('#fr').val();
+        var nb_co = $('#co').val();
+        var nb_eng = $('#eng').val();
+        var nb_cro = $('#cro').val();
+        var nb_can = $('#can').val();
+        var nb_ru = $('#ru').val();
+        var nb_ja = $('#ja').val();
+        var nb_et = $('#et').val();
+        var nb_au = $('#au').val();
+        var nb_no = $('#no').val();
+
+
+
+        var myPieChart = new Chart(document.getElementById("pie-chart"), {
+            type: 'pie',
+            data: {
+                labels: ["Homme", "Femme", "Autre"],
+                datasets: [{
+                    label: "Sexe",
+                    backgroundColor: ["#8FBC8F", "#E9967A","#A9A9A9"],
+                    data: [nb_homme,nb_femme,nb_other]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Répartition du sexe',
+                    fontColor: "#f7f7f7"
+                },
+                legend:{
+                    labels:{
+                        fontColor: "#f7f7f7"
+                    },
+                    position:"bottom",
+                }
+            }
+        });
+
+        var myBarChart = new Chart(document.getElementById("bar-chart"), {
+            type: 'bar',
+            data: {
+                labels: ["Français", "Coréen", "Anglais", "Croate", "Canadien" , "Américain", "Norvégien" ,"Japonais" , "Russe", "Autres"],
+                datasets: [
+                    {
+                        label: "Population",
+                        backgroundColor: ["#3e95cd", "#fdfdfd","#fdfdfd","#e8c3b9","#c45850","#c45850","#c45850","#c45850","#c45850","#c45850"],
+                        data: [nb_fr,nb_co,nb_eng,nb_cro,nb_can,nb_et,nb_no,nb_ja, nb_ru, nb_au]
+                    }
+                ]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Nationalités des joueurs'
+                }
+            }
+        });
+
+
+
+    </script>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
