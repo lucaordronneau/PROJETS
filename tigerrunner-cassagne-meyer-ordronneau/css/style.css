@@ -1,0 +1,296 @@
+/* Page Principale */
+.nav {
+     margin: auto;
+     max-width: 100%
+     margin-top: 25px;
+}
+.nav li {
+     width : 20%;
+     text-align : center;
+     border-radius : 50px;
+}
+#controls {
+     width: 300px;
+     margin: auto;
+}
+/* Footer */
+#a_propos {
+     float:left;
+     margin-left: 0.2%;
+}
+
+.puces {list-style: none; counter-reset: li}
+
+.puces li::before {content: counter(li); font-size : 20px; color: #f68c04;
+    display: inline-block; width: 1em; margin-left: -1.5em;
+    margin-right: 0.5em; text-align: right; direction: rtl}
+
+.puces li {counter-increment: li}
+
+ h1 {
+ 	text-align : center;
+ }
+#couleur_footer {
+	background-color: #DCDCDC;
+	width : 100%;
+	float :right;
+}
+#couleur_footer hr {
+	margin : 0;
+	padding : 0;
+}
+
+#cpr {
+     float: right;
+     margin-right: 0.2%;
+
+}
+
+/* Page de Profil */
+fieldset, #contact {
+     padding: 0.5%;
+     margin-right: 0.5%;
+     border:1px solid black;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+     border-radius:8px;
+     background-color: rgb(0, 123, 255, 0.25);
+}
+#gauche {
+	float : left;
+	width : 48%;
+	background-color :#DCDCDC;
+}
+#contact {
+     width: 25%;
+     float: left;
+     background-color :#DCDCDC;
+}
+#message {
+     width: 99%;
+     float: right;
+     height: 175px;
+     overflow: auto;
+     background-color : #F5F5F5;
+     margin-bottom : 1%;
+}
+
+#inscriptionform {
+	width : 75%;
+	margin-left : 12.5%;
+
+
+}
+
+#info_perso, #passe, #info_prive, #score,#mess_pri_lab, #amis, #action, #mess_lab, #inscriptiontitre {
+     text-align : center;
+     padding-bottom : 1.5%;
+}
+
+
+#prive_field, #messagerie_prive, #action, #mess_lab, #messagerie {
+	margin-top : 1%;
+}
+
+ #liste_ami_pv, #liste_ami {
+	margin-top : 1.5%;
+}
+
+
+#info_profil {
+     text-align: center;
+     vertical-align: middle;
+}
+#profil_droit{
+	float : right;
+	width : 48%;
+	height : 100px;
+	background-color :#DCDCDC;
+}
+
+#adresse_field,#passe_field {
+     width: 48%;
+     position: relative;
+}
+#passe_field{
+     float: right;
+     background-color :#DCDCDC;
+}
+#adresse_field{
+     float: left;
+     background-color :#DCDCDC;
+}
+#adresse {
+     text-align : center;
+     margin-left: 1%;
+}
+.mess_droite {
+     float: right;
+     text-align: right;
+     background-color: #007bff;
+     width: 55%;
+     border-radius: 20px;
+     padding-right: 5px;
+     color : white;
+}
+.mess_gauche {
+     float: left;
+     text-align: left;
+     background-color: #C9C9C9;
+     width: 55%;
+     border-radius: 20px;
+     padding-left: 5px;
+}
+#mess_private {
+     width: 68%;
+     margin: 1%;
+}
+#mess_private_send {
+     width: 8%;
+     margin: 1%;
+     float: right;
+}
+
+#mess_p {
+	width : 85%;
+	margin-left : 1%;
+}
+.fa-warning, .fa-refresh {
+	padding-right : 1%;
+}
+
+.fa-trash-o {
+	padding-left : 1%;
+}
+
+#prenom1, #nom1, #mail, #motDePasse  {
+	margin-left : 25%;
+	width : 50%;
+}
+
+#bouton_val {
+	width : 160px;
+	margin: auto;
+}
+
+#conf_bt {
+	width : 38%;
+	margin: auto;
+}
+
+ #connect1 {
+ 	width : 120px;
+ 	margin: auto;
+ }
+
+#titre_cherche {
+	text-align : center;
+}
+
+.fond_cherche {
+	background-color : #F5F5F5;
+	padding : 2%;
+}
+#place_message {
+	float : right;
+	width : 74.5%;
+}
+
+.message {
+	width : 70%;
+
+}
+
+#mess {
+     width: 85%
+}
+
+#send {
+     float: right;
+}
+
+#send_pv {
+	float : right;
+	width : 10.5%;
+}
+
+#link_score {
+	margin-bottom : 3%;
+}
+
+.w3-xxlarge{font-size:36px!important;}
+
+.couleur_best, #score {
+	color : #f68c04;
+}
+
+#imgeisti {
+	float : right;
+	margin-top : 5px;
+}
+
+#imgtigre {
+	margin: auto;
+     max-width: 750px;
+	padding : 2px;
+}
+
+.fond_cherche2 {
+	 background-color: rgb(0, 123, 255, 0.25);
+	padding : 2%;
+	width : 50%;
+	margin-left : 25%;
+}
+
+.copyr {
+	padding-left : 5px;
+	padding-right : 5px;
+}
+/* Jeu Tiger Runner */
+#container {
+  width: 600px;
+  height: 360px;
+  margin: auto;
+}
+canvas {
+  margin: auto;
+  border: 1px solid black;
+  z-index: 1;
+  width: 600px;
+  height: 360px;
+  border: 1px solid black;
+  -moz-border-radius:8px;
+   -webkit-border-radius:8px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#bt_ami {
+     width: 240px;
+	margin:auto;
+}
+/* Page Admin */
+table {
+     max-width: 100%;
+}
+#mess_admin {
+	margin-left : 1%;
+	width :15%;
+	background-color :#DCDCDC;
+}
+
+.color_admin {
+	background-color :#DCDCDC;
+}
+
+#messagerie2{
+	margin : 1%;
+}
+
+
+#suspect, #liste, #messagerie {
+	margin-left : 4%;
+	margin-bottom : 1%;
+}
