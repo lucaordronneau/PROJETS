@@ -1,3 +1,4 @@
+
 <html xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
@@ -16,16 +17,19 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2121DE;">
 
-    <a class="navbar-brand">PACMAN</a>
+    <a href="/" title="Revenir au menu">
+        <img alt="texte alternatif pour le lien image" th:src="@{/css/images/pacmanfavicon.png}" width="20" height="20" />
+    </a>
+    <a class="navbar-brand" style="color: white;padding-bottom: 0;padding-left: 0.6%;">PACMAN</a>
 
 </nav>
 
 <div class="container">
-    <div class="block col-12 col-md-8 bg-light mt-4 mx-auto">
+    <div class="block2 col-12 col-md-8 bg-light mt-4 mx-auto">
         <div class="row">
-            <h3 class="mx-auto">Mise à jour du profil 2</h3>
+            <h3 class="mx-auto">Mise à jour du profil du joueur</h3>
         </div>
         <hr class="hrC">
         <form th:action="@{/saveUpdateListeJoueurs}" th:object="${personne}" method="POST">
@@ -33,15 +37,12 @@
             <div class="col-12">
                 <input type="hidden" th:field="*{id}" />
             </div>
-            <div class="form-group row" th:classappend="${#fields.hasErrors('pseudo')}? 'has-error':''">
+            <div class="form-group row">
                 <div class="col-12">
-                    <input type="text" th:field="*{pseudo}" class="form-control" maxlength="16" required>
+                    <input type="hidden" th:field="*{pseudo}">
                 </div>
-                <p class="error-message col-12"
-                   th:each="error: ${#fields.errors('pseudo')}"
-                   th:text="${error}">Validation error
-                </p>
             </div>
+            <h4 class = "mt-4">Email</h4>
             <div class="form-group row" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
                 <div class="col-12">
                     <input type="text" th:field="*{email}" class="form-control" required>
@@ -51,7 +52,7 @@
                    th:text="${error}">Validation error
                 </p>
             </div>
-
+            <h4 class = "mt-4">Pays</h4>
             <div class="form-group row">
                 <div class="col-12">
                     <select class="custom-select my-1 mr-sm-2" th:field="*{pays}" id="pays">
@@ -78,8 +79,22 @@
             <div class="col-12">
                 <input type="hidden" th:field="*{score}" />
             </div>
+            <h4 class = "mt-4">Sexe</h4>
             <div class="col-12">
-                <input type="hidden" th:field="*{sexe}" />
+                <div class="mb-2">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="homme" name="homme" class="custom-control-input" th:field="*{sexe}" th:value="H" required>
+                        <label class="custom-control-label" for="homme">Homme</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="femme" name="femme" class="custom-control-input" th:field="*{sexe}" th:value="F">
+                        <label class="custom-control-label" for="femme">Femme</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="other" name="other" class="custom-control-input" th:field="*{sexe}" th:value="O">
+                        <label class="custom-control-label" for="other">Other</label>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group row">
@@ -91,10 +106,10 @@
                         <button type="submit" class="buttonC">Retour à la liste</button>
                     </form>
                 </div>
-                </div>
             </div>
-        </form>
     </div>
+    </form>
+</div>
 
 
 </div>

@@ -21,4 +21,6 @@ public interface PersonneService extends UserDetailsService {
     long countBySexe(String sexe);
     long countByPays(String pays);
     void deletePersonneById(int id);
+    void savePersonne(Personne personne);
+    void updateScore(Personne personne);
 }

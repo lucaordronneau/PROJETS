@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" th:href="@{/css/images/pacmanfavicon.png}" />
+    <title>PACMAN Joueurs</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2121DE;">
+
+    <a href="/" title="Revenir au menu">
+        <img alt="texte alternatif pour le lien image" th:src="@{/css/images/pacmanfavicon.png}" width="20" height="20" />
+    </a>
+    <a class="navbar-brand" style="color: white;padding-bottom: 0;padding-left: 0.6%;">PACMAN</a>
+
+</nav>
+
+<div class="container">
+
+    <form class="mt-4 block2" th:action="@{/savePersonne}" th:object="${personne}" method="post">
+
+        <div class="row">
+            <h3 class="mx-auto">Ajouter un joueur</h3>
+        </div>
+        <hr class="hrC">
+        <p class="error-message" th:if="${#fields.hasGlobalErrors()}"
+           th:each="error : ${#fields.errors('global')}" th:text="${error}">Validation
+            error</p>
+        <div th:if="${param.success}">
+            <div class="alert alert-info">Ajout réussit !</div>
+        </div>
+        <div class="form-group row" th:classappend="${#fields.hasErrors('pseudo')}? 'has-error':''">
+            <div class="col-12">
+                <input type="text" class="form-control" id="pseudoInscription" placeholder="Pseudo"  th:field="*{pseudo}" maxlength="16" required>
+            </div>
+            <p class="error-message col-12"
+               th:each="error: ${#fields.errors('pseudo')}"
+               th:text="${error}">Validation error</p>
+        </div>
+        <div class="form-group row" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
+            <div class="col-12">
+                <input type="email" class="form-control" id="email" placeholder="Email" th:field="*{email}" required>
+            </div>
+            <p class="error-message col-12"
+               th:each="error: ${#fields.errors('email')}"
+               th:text="${error}">Validation error</p>
+        </div>
+        <div class="form-group row" th:classappend="${#fields.hasErrors('pays')}? 'has-error':''">
+            <div class="col-12">
+                <!--                        <input type="text" class="form-control" id="pays" placeholder="Pays" th:field="*{pays}" maxlength="50" required>-->
+                <select class="custom-select my-1 mr-sm-2" th:field="*{pays}" id="pays">
+                    <option value="FRANCE">FRANCE</option>
+                    <option value="CROATIE">CROATIE</option>
+                    <option value="COREE DU SUD">COREE DU SUD</option>
+                    <option value="CANADA">CANADA</option>
+                    <option value="ANGLETERRE">ANGLETERRE</option>
+                    <option value="ETATS-UNIS">ETATS-UNIS</option>
+                    <option value="JAPON">JAPON</option>
+                    <option value="NORVEGE">NORVEGE</option>
+                    <option value="RUSSIE">RUSSIE</option>
+                    <option value="AUTRE">AUTRE</option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-2">
+            <div class="custom-control custom-radio custom-control-inline" th:classappend="${#fields.hasErrors('sexe')}? 'has-error':''">
+                <input type="radio" id="homme" name="homme" class="custom-control-input" th:field="*{sexe}" th:value="H" required>
+                <label class="custom-control-label" for="homme">Homme</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline" th:classappend="${#fields.hasErrors('sexe')}? 'has-error':''">
+                <input type="radio" id="femme" name="femme" class="custom-control-input" th:field="*{sexe}" th:value="F">
+                <label class="custom-control-label" for="femme">Femme</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline" th:classappend="${#fields.hasErrors('sexe')}? 'has-error':''">
+                <input type="radio" id="other" name="other" class="custom-control-input" th:field="*{sexe}" th:value="O">
+                <label class="custom-control-label" for="other">Other</label>
+            </div>
+        </div>
+
+        <div class="form-group row" th:classappend="${#fields.hasErrors('motDePasse')}? 'has-error':''">
+            <div class="col-12">
+                <input type="password" class="form-control" id="motDePasseInscription" placeholder="Mot de passe" th:field="*{motDePasse}" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="mx-auto">
+                <button type="submit" class="buttonC">Ajouter</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <a th:href="@{/listeJoueurs}" class="buttonC"> Retour à la liste de joueurs </a>
+</div>
+</body>
+
+</html>

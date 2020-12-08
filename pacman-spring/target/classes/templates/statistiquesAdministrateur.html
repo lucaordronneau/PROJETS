@@ -18,11 +18,14 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2121DE;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand">PACMAN</a>
+    <a href="/profilAdministrateur" title="Revenir au profil">
+        <img alt="texte alternatif pour le lien image" th:src="@{/css/images/pacmanfavicon.png}" width="20" height="20" />
+    </a>
+    <a class="navbar-brand" style="color: white;padding-bottom: 0;padding-left: 0.6%;">PACMAN</a>
 
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
@@ -46,7 +49,7 @@
 </nav>
 
 <div class="container">
-    <h2 class = "mt-4">Stats !</h2> <br>
+    <h2 class = "mt-4">Statistiques!</h2> <br>
 
     <input id="homme"  type="hidden" th:value="${listNbHomme}"/>
 
@@ -94,8 +97,8 @@
         var nb_other = $('#other').val();
         var nb_fr = $('#fr').val();
         var nb_co = $('#co').val();
-        var nb_eng = $('#eng').val();
-        var nb_cro = $('#cro').val();
+        var nb_eng = $('#an').val();
+        var nb_cro = $('#cr').val();
         var nb_can = $('#can').val();
         var nb_ru = $('#ru').val();
         var nb_ja = $('#ja').val();
@@ -119,11 +122,9 @@
                 title: {
                     display: true,
                     text: 'Répartition du sexe',
-                    fontColor: "#f7f7f7"
                 },
                 legend:{
                     labels:{
-                        fontColor: "#f7f7f7"
                     },
                     position:"bottom",
                 }
@@ -137,16 +138,17 @@
                 datasets: [
                     {
                         label: "Population",
-                        backgroundColor: ["#3e95cd", "#fdfdfd","#fdfdfd","#e8c3b9","#c45850","#c45850","#c45850","#c45850","#c45850","#c45850"],
+                        backgroundColor: ["#CD6155", "#AF7AC5","#2980B9","#16A085","#F5B041","#95A5A6","#717D7E","#34495E","#F4D03F","#E59866"],
                         data: [nb_fr,nb_co,nb_eng,nb_cro,nb_can,nb_et,nb_no,nb_ja, nb_ru, nb_au]
                     }
                 ]
             },
             options: {
-                legend: { display: false },
+                legend: { display: false, fontColor: "#fdfdfd"
+                },
                 title: {
                     display: true,
-                    text: 'Nationalités des joueurs'
+                    text: 'Nationalités des joueurs',
                 }
             }
         });

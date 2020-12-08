@@ -105,10 +105,15 @@ public class GeneralController {
         Map<String, Object> model = new HashMap<String, Object>();
 
         List<Personne> listeJoueurParScore = personneService.classement();
-        model.put("listeJoueurParScore", listeJoueurParScore);
-
-
         System.out.println(listeJoueurParScore);
+        HashMap<Integer, Personne> positionScore = new HashMap<Integer, Personne>();
+        Integer i = 1;
+        for (Personne p : listeJoueurParScore){
+            positionScore.put(i, p);
+            i = i + 1;
+        }
+        model.put("listeJoueurParScore", positionScore);
+
         return new ModelAndView(viewName, model);
     }
 }

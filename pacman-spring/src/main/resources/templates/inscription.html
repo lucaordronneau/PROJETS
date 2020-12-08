@@ -15,11 +15,15 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2121DE;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/">PACMAN</a>
+    <a href="/" title="Revenir au menu">
+        <img alt="texte alternatif pour le lien image" th:src="@{/css/images/pacmanfavicon.png}" width="20" height="20" />
+    </a>
+    <a class="navbar-brand" style="color: white;padding-bottom: 0;padding-left: 0.6%;">PACMAN</a>
+
 
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
@@ -34,12 +38,12 @@
 </nav>
 
 <div class="container">
-        <div class="col-12 col-md-6 mt-4 mx-auto">
+        <div class="block2 col-12 col-md-6 mt-4 mx-auto">
             <form th:action="@{/inscription}" th:object="${personne}" method="post">
                 <div class="row">
                     <h3 class="mx-auto">INSCRIPTION</h3>
                 </div>
-                <hr class="hrS">
+                <hr class="hrC">
                 <p class="error-message" th:if="${#fields.hasGlobalErrors()}"
                    th:each="error : ${#fields.errors('global')}" th:text="${error}">Validation
                     error</p>
@@ -101,7 +105,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="mx-auto">
-                        <button type="submit" class="buttonS">Inscrivez-vous</button>
+                        <button type="submit" class="buttonC">Inscrivez-vous</button>
                     </div>
                 </div>
                 <div class="form-group">

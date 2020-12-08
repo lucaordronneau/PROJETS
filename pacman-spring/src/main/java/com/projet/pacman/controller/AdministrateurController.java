@@ -1,16 +1,23 @@
 package com.projet.pacman.controller;
 
+import com.projet.pacman.model.Messagerie;
 import com.projet.pacman.model.Personne;
+import com.projet.pacman.model.PersonneInscriptionDTO;
 import com.projet.pacman.security.PersonnePrincipal;
+import com.projet.pacman.service.MessagerieService;
 import com.projet.pacman.service.PersonneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +27,8 @@ public class AdministrateurController {
 
     @Autowired
     private PersonneService personneService;
+    @Autowired
+    private MessagerieService messagerieService;
 
     @GetMapping("/listeJoueurs")
     public ModelAndView getListeJoueurs() {
@@ -31,8 +40,18 @@ public class AdministrateurController {
         List<Personne> listeJoueur = personneService.findByStatut("JOUEUR");
         model.put("listeJoueur", listeJoueur);
         /*On affiche dans le terminal*/
+        List<Messagerie> listeMessages = messagerieService.listeMessages();
+        model.put("listeMessages", listeMessages);
+        System.out.println(listeMessages);
+
+        Messagerie messagerie = new Messagerie();
+        model.put("messagerie", messagerie);
+
+
         System.out.println(listeJoueur);
         return new ModelAndView(viewName, model);
+
+
     }
 
     @GetMapping("/profilAdministrateur")
@@ -99,13 +118,22 @@ public class AdministrateurController {
 
     @GetMapping("/deletePersonne/{id}")
     public String deletePersonne(@PathVariable(value = "id") int id) {
-        System.out.println("delete");
-        System.out.println(id);
         this.personneService.deletePersonneById(id);
         return "redirect:/listeJoueurs";
     }
 
+    @GetMapping("/showNewJoueur")
+    public String showNewJoueur(Model model) {
+        // create model attribute to bind form data
+        Personne personne = new Personne();
+        model.addAttribute("personne", personne);
+        return "showNewJoueurForm";
+    }
 
-
+    @PostMapping("/savePersonne")
+    public String savePersonne(@ModelAttribute("personne") Personne personne) {
+        personneService.savePersonne(personne);
+        return "redirect:/listeJoueurs";
+    }
 
 }

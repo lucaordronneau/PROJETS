@@ -1,9 +1,10 @@
+
 body {
     margin: 0;
     padding: 0;
     font-family: Helvetica ;
-    background-color: #1919A6;
-    color: #f7f7f7;
+    background-color: #f7f7f7;
+    color: #1919A6;
 }
 
 #my_form {
@@ -19,9 +20,17 @@ body {
     border-radius: 14px;
 }
 
+.block2{
+    padding: 8px;
+    margin: 2px;
+    color: #1919A6;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.10);
+    border-radius: 14px;
+}
+
 .block label{
-    color: #FD0000;
-    opacity: 60%;
+    color: gold;
+    opacity: 100%;
     font-size: 12px;
     vertical-align: baseline;
 }
@@ -38,7 +47,7 @@ body {
 }
 
 .hrC {
-    border: 1px solid #DEA185;
+    border: 1px solid gold;
     width: 90px;
 }
 
@@ -46,12 +55,12 @@ body {
 
 .lienIC{
     text-decoration: none;
-    color:#DEA185;
+    color:gold;
 }
 
 .lienIC:hover{
     text-decoration: none;
-    color:#DEA185;
+    color:gold;
     opacity: 60%;
 }
 
@@ -95,19 +104,22 @@ h2 span {
     cursor: pointer;
     text-transform: uppercase;
     background: #f7f7f7;
-    color: #DEA185;
-    border: 2px solid #DEA185;
+    color: gold;
+    border: 2px solid gold;
     text-decoration: none;
+    margin-bottom : 5%;
 }
 
 .buttonC:hover {
-    background-color: #DEA185;
+    background-color: #2121de;
     color: #f7f7f7;
     text-decoration: none;
 }
 
 /*Table*/
 .table td, table th {
+    text-align: center;
+    text-transform: uppercase;
     border-color: #2121DE !important;
 }
 .table thead th {
@@ -116,59 +128,29 @@ h2 span {
 .table td, table th {
     border-width: 3px !important;
     border-color: #2121DE !important;
-    color: #FFFF00;
-    background-color: black;
+    color: #2121DE;
+    background-color: #f7f7f7;
 }
 .table td {
-    color: #DEA185;
+    color: #2121DE;
 }
 .table th {
-    color: #FFFF00;
+    color: #2121DE;
 }
 
-/* Classement */
-
-.classement {
-    border-collapse: collapse;
-    width: 50%;
-    margin: auto;
-}
-
-.classement td, .classement th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.classement tr{
-    background-color: #bebebe;
-}
-
-.classement tr:nth-child(even){
-    background-color: black;
-}
-
-.classement tr:hover {
-    background-color: #ddd;
-}
-
-.classement th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: cadetblue;
-    color: white;
-
-}
 
 .grid {
     display: flex;
     flex-wrap: wrap;
     width: 566px;
     height: 566px;
+    min-height: 566px;
+    max-height: 566px;
+    max-width: 566px;
+    min-width: 566px;
     border: solid black;
-    margin-left: 50px;
-    margin-top: 50px;
+    background-color: #1919A6;
+    margin: auto;
 }
 
 .grid div {
@@ -177,8 +159,8 @@ h2 span {
 }
 
 .pac-dot {
-    background-color: green;
-    border: 5px solid white;
+    background-color: yellow;
+    border: 8px solid #1919A6;
     box-sizing: border-box;
 }
 
@@ -191,7 +173,159 @@ h2 span {
     border-radius: 10px;
 }
 
+.nothing {
+    background-color: #1919A6;
+}
+
 .pac-man {
+
     background-color: yellow;
     border-radius: 10px;
+
+    /*background-image: url("pacman-img.png");*/
+}
+
+.blinky {
+    background-color: red;
+    border: 0px;
+}
+
+.pinky {
+    background-color: pink;
+    border: 0px;
+}
+
+.inky {
+    background-color: cyan;
+    border: 0px;
+}
+
+.clyde {
+    background-color: orange;
+    border: 0px;
+}
+
+.scared-ghost {
+    background-color: aquamarine;
+    border: 0px;
+}
+
+.flex-container-jeu-classement{
+    postion : absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.key{
+    margin : 5px;
+    text-align : center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: large;
+}
+
+#contain ul {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 670px;
+}
+
+
+.ghost-lair{
+    background-color: #1919A6;
+}
+
+#z{
+    background-color: darkgrey;
+}
+
+#q{
+    background-color: darkgrey;
+}
+
+#s{
+    background-color: darkgrey;
+}
+
+#d{
+    background-color: darkgrey;
+}
+
+.msg-ctent-other {
+    width:  800px;
+    color: #f7f7f7;
+}
+
+.msg-ctent-other span {
+    display: block;
+    margin: auto;
+    background-color: dodgerblue;
+    border-radius: 5px;
+    width: 275px;
+    text-align: center;
+    float: left;
+    padding: 5px;
+}
+
+.msg-ctent-other {
+    width: 100%;
+}
+
+.msg-ctent-me {
+    width: 100%;
+}
+.msg-ctent-me span {
+    color: white;
+    display: block;
+    margin: auto;
+    background-color: green;
+    border-radius: 5px;
+    width: 275px;
+    text-align: center;
+    float: right;
+    padding: 5px;
+}
+
+.messagerie td {
+    padding: 15px;
+}
+
+.msg-pseudo{
+    text-align: center;
+    color: black;
+}
+
+.msg-date-me {
+    text-align: center;
+    color: green;
+}
+
+.msg-date-other {
+    text-align: center;
+    color: dodgerblue;
+}
+
+.messagerie {
+    border: 2px black solid;
+    display: block;
+    margin: auto;
+}
+
+.messagerie  table{
+    width: 100%;
+    display: block;
+}
+
+@media (max-width : 1100px){
+    .grid {
+        margin: auto;
+    }
+    .flex-container-jeu-classement{
+        flex-direction: column;
+    }
 }

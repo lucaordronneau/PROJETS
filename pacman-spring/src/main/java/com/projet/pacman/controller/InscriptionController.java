@@ -23,11 +23,13 @@ public class InscriptionController {
 
     @ModelAttribute("personne")
     public PersonneInscriptionDTO personneInscriptionDTO(){
+
         return new PersonneInscriptionDTO();
     }
 
     @GetMapping
     public String getInscription(Model model) {
+
         return "inscription";
     }
 

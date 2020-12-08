@@ -106,4 +106,15 @@ public class PersonneServiceImpl implements PersonneService {
 
         return personnePrincipal;
     }
+    @Override
+    public void savePersonne(Personne personne) {
+        personne.setMotDePasse(passwordEncoder.encode(personne.getMotDePasse()));
+        personne.setStatut("JOUEUR");
+        this.personneRepository.save(personne);
+    }
+
+    @Override
+    public void updateScore(Personne personne) {
+        this.personneRepository.save(personne);
+    }
 }

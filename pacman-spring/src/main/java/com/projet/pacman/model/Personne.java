@@ -6,10 +6,12 @@ import java.util.Arrays;
 import java.util.List;
 
 @Entity
+@Table(name = "personne")
 public class Personne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
     @Column
     private String pseudo;
@@ -25,6 +27,8 @@ public class Personne {
     @Column
     private String sexe;
 
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "personne")
+    private List<Messagerie> messagerie;
 
     //Securité
     public Personne(String pseudo, String motDePasse, String statut) {
@@ -109,6 +113,14 @@ public class Personne {
 
     public void setSexe(String sexe) {
         this.sexe = sexe;
+    }
+
+    public List<Messagerie> getMessagerie() {
+        return messagerie;
+    }
+
+    public void setMessagerie(List<Messagerie> messagerie) {
+        this.messagerie = messagerie;
     }
 
     public List<String> getStatutList(){

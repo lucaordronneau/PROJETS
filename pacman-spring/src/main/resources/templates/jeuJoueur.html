@@ -11,16 +11,21 @@
     <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}">
     <!-- favicon -->
     <link rel="icon" type="image/png" th:href="@{/css/images/pacmanfavicon.png}" />
+    <script th:src="@{/chartjs/pacman.js}"></script>
     <title>PACMAN</title>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2121DE;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/jeuJoueur">PACMAN</a>
-
+    <a href="/" title="Revenir au menu">
+        <img alt="texte alternatif pour le lien image" th:src="@{/css/images/pacmanfavicon.png}" width="20" height="20" />
+    </a>
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
             <li class="nav-item active">
@@ -40,13 +45,114 @@
 </nav>
 
 <div class="container">
-    <h2 class = "mt-4">Espace Jeu du Joueur !</h2> <br>
-    <h5 th:text="${validationProfilJoueur}"></h5>
+    <h2 class = "mt-4" style="text-align: center;">Espace Jeu du Joueur !</h2> <br>
+    <input type="hidden" id="score_input" value="0">
+    <input type="hidden" id="jouer_input" value="0">
+
+    <script>
+        var newScore = document.getElementById("score_input").value;
+    </script>
+
+
+    <div class="col-12">
+            <span th:text="${recordJoueur}"></span>
+            <button  class="buttonC"  th:attr="onclick=|envScore('${personne.id}')|">Recommencer</button>
+    </div>
+
+
+    <div class="flex-container-jeu-classement">
+
+        <div>
+            <h3 style="text-align: center;">Score:<span id="score">0</span></h3>
+            <div class="grid"></div>
+
+        </div>
+
+        <div>
+            <table class="table classement">
+                <thead>
+                <tr>
+                    <th>POSITION</th>
+                    <th>PSEUDO</th>
+                    <th>SCORE</th>
+
+                </tr>
+                </thead>
+                <tbody class="thead-light">
+                <tr th:each="personne : ${listeJoueurParScore}">
+                    <td th:text="${personne.key}"></td>
+                    <td th:text="${personne.value.pseudo}"></td>
+                    <td th:text="${personne.value.score}"></td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+
+    <div id="contain">
+        <ul id=""keyboard>
+            <div class="key" id="z">Z</div>
+            <div class="key" id="q">Q</div>
+            <div class="key" id="s">S</div>
+            <div class="key" id="d">D</div>
+        </ul>
+    </div>
+
+    <div>
+        <div> <span> CHAT </span></div>
+        <table class="messagerie">
+            <tbody >
+            <tr th:each="messagerie : ${listeMessages}">
+
+                <span th:if="${messagerie.getPersonne().id == personne.id}">
+                    <td  class="msg-pseudo"> <span> Moi </span></td>
+                    <td class="msg-ctent-me" > <span th:text="${messagerie.message}"></span></td>
+                    <td  class="msg-date-me" th:text="${messagerie.date}"></td>
+                </span>
+                <span th:if="${messagerie.getPersonne().id != personne.id}">
+                    <td  class="msg-pseudo"> <span th:text="${messagerie.getPersonne().pseudo}"></span></td>
+                    <td class="msg-ctent-other" > <span th:text="${messagerie.message}"></span></td>
+                    <td  class="msg-date-other" th:text="${messagerie.date}"></td>
+                </span>
+            </tr>
+            </tbody>
+        </table>
+
+        <form style="padding: 25px;" th:action="@{/envoiMessage}" th:object="${messagerie}" method="POST">
+            <div>
+                <input type="text" th:field="*{message}" class="form-control"/>
+            </div>
+            <div>
+                <input style="margin-bottom: 10px;" th:name="personne" th:id="personne" type="hidden"  th:value="${personne.id}" class="form-control"/>
+            </div>
+
+            <button type="submit" class="buttonC">Envoyer</button>
+        </form>
+    </div>
+
 </div>
+
+<script text="javascript">
+    function envScore(id_joueur) {
+        var var_id = id_joueur;
+        var newScore = document.getElementById("score_input").value;
+        document.location.href="?id="+var_id+"&score="+newScore;
+    }
+
+    function  jouer() {
+        document.getElementById("jouer_input").value = 1;
+    }
+</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+
 </body>
 </html>
+
+
